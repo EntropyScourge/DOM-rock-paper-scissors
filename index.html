@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function computerPlay() {
+                const weapons = ["rock", "paper", "scissors"];
+                return weapons[Math.floor(Math.random() * 3)];
+            }
+
+            function playRound(playerSelection, computerSelection) {
+                playerSelection = playerSelection.toLowerCase();
+                if (playerSelection === computerSelection) {
+                    return `It\'s a draw: ${playerSelection} matches ${computerSelection} !`;
+                }
+                else {
+                    let isWin;
+                    switch(playerSelection + computerSelection) {
+                        case "rockpaper":
+                            isWin = false;
+                            break;
+                        case "rockscissors":
+                            isWin = true;
+                            break;
+                        case "paperrock":
+                            isWin = true;
+                            break;
+                        case "paperscissors":
+                            isWin = false;
+                            break;
+                        case "scissorsrock":
+                            isWin = false;
+                            break;
+                        case "scissorspaper":
+                            isWin = true;
+                            break;
+                    }
+                    return isWin ? `You win, ${playerSelection} beats ${computerSelection}!` : `You lose, ${computerSelection} beats ${playerSelection}!`;
+                }
+            }
+
+            function game() {
+                let score = 0;
+
+            }
+
+        </script>
+    </head>
+</html>
