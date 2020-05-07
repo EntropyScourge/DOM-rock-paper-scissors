@@ -38,10 +38,8 @@
             function game() {
                 let score = 0;
                 for (i=0; i<5; i++) {
-                    let playerSelection = prompt(`Round ${i+1}\nChoose your weapon:`);
-                    let computerSelection = computerPlay();
-                    console.log(computerSelection);
-                    let round = playRound(playerSelection, computerSelection);
+                    const inputs = handleInputs(`Round ${i+1}\nChoose your weapon:`)
+                    let round = playRound(inputs[0], inputs[1]);
                     console.log(round);
                     round.includes("win") && score++;
                 }
