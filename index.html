@@ -8,9 +8,8 @@
             }
 
             function handleInputs(message) {
-                const playerSelectionInput = prompt(message);
-                const playerSelection = playerSelectionInput.toLowerCase();
-                let computerSelection = computerPlay();
+                const playerSelection = prompt(message).toLowerCase();
+                const computerSelection = computerPlay();
                 return [playerSelection, computerSelection];
             }
 
@@ -19,20 +18,20 @@
                 while (playerSelection === computerSelection) {
                     [playerSelection, computerSelection] = handleInputs(`It\'s a draw: ${playerSelection} matches ${computerSelection}! Replay the round!`)
                 }
-                let isWin;
+                let win;
                 switch(playerSelection + computerSelection) {
                     case "paperscissors":
                     case "rockpaper":
                     case "scissorsrock":
-                        isWin = false;
+                        win = false;
                         break;
                     case "rockscissors":
                     case "paperrock":
                     case "scissorspaper":
-                        isWin = true;
+                        win = true;
                         break;
                 }
-                return isWin ? `You win, ${playerSelection} beats ${computerSelection}!` : `You lose, ${computerSelection} beats ${playerSelection}!`;
+                return win ? `You win, ${playerSelection} beats ${computerSelection}!` : `You lose, ${computerSelection} beats ${playerSelection}!`;
             }
 
             function game() {
@@ -40,11 +39,11 @@
                 for (i=0; i<5; i++) {
                     const inputs = handleInputs(`Round ${i+1}\nChoose your weapon:`)
                     let round = playRound(inputs[0], inputs[1]);
-                    console.log(round);
+                    console.log("Round " + (i+1) + ": " + round);
                     round.includes("win") && score++;
                 }
                 outcomeMessage = score > 2 ? "You win!" : "You lose!";
-                console.log(outcomeMessage + "\nScore: " + score);
+                console.log(outcomeMessage + "\nScore: " + score + "/5");
             }
 
         </script>
