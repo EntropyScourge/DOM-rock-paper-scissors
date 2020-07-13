@@ -1,0 +1,33 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#message {
+    margin-top: 200px;
+}
+
+.button-container {
+    height: 300px;
+    padding-bottom: 200px;
+}
+
+button {
+    height: 100px;
+    width: 100px;
+}
+
+#score {
+    font-size: 72pt;
+}
+
+#round {
+    font-size: 48pt;
+}
